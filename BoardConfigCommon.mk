@@ -19,6 +19,8 @@ OMAP_ENHANCEMENT_HWC_EXTENDED_API := true
 TARGET_KERNEL_HAVE_EXFAT := \
     $(if $(strip $(wildcard external/*exfat*/Kconfig)),true,)
 
+KERNEL_HAS_FINIT_MODULE := false
+
 GAPPS_VARIANT := nano
 
 # inherit from the proprietary versions
