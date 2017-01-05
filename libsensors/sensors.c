@@ -37,10 +37,10 @@ static const struct sensor_t sSensorList[] = {
 		.version	= 1,
 		.handle		= SENSORS_HANDLE_BASE+ID_A,
 		.type		= SENSOR_TYPE_ACCELEROMETER,
-		.maxRange	= (8.0f*GRAVITY_EARTH),
-		.resolution	= (8.0f*GRAVITY_EARTH)/2048.0f,
-		.power		= 0.57f,
-		.minDelay	= 0,
+		.maxRange	= GRAVITY_EARTH * 2.0f,
+		.resolution	= GRAVITY_EARTH / 1024.0f,
+		.power		= 0.7f,
+		.minDelay	= 10000,
 		.reserved	= { }
 	},
 };
@@ -65,7 +65,7 @@ struct sensors_module_t HAL_MODULE_INFO_SYM = {
         .version_major = 1,
         .version_minor = 0,
         .id = SENSORS_HARDWARE_MODULE_ID,
-        .name = "Barnes and Noble Encore Sensors Module",
+        .name = "B&N Nook HD Sensors Module",
         .author = "Austen Dicken",
         .methods = &sensors_module_methods,
     },
